@@ -1,0 +1,390 @@
+body{
+    background-image: url(/Project/RNP-BG.jpg);
+    background-size: cover;
+    
+    text-align: center;
+    margin: auto;
+    padding-bottom: 70px;
+}
+/* Ensure the sidebar occupies the full height */
+    #sidebar {
+        height: 100vh; /* 100% of the viewport height */
+        background-image: url(/Project/RNP-BG.jpg);
+        border-right: solid;
+        border-color: rgb(155, 82, 8);
+      }
+
+      .sidebar-toggle{
+        color: #00000074;
+      }
+
+      .user-dp {
+        transform: scale(1.1); /* Scale the entire div */
+        
+    }
+    
+    .user-drop {
+        font-size: 1.5rem; /* Adjust the text size inside the strong tag */
+        color: #2a2323a1;
+    }
+    
+    .dropdown-toggle::after {
+        font-size: 1.2rem; /* Adjust the size of the dropdown arrow */
+        margin-left: 5px; /* Adjust space between text and arrow */
+    }
+    
+      
+
+      .btn-hamburger{
+       
+        color: rgba(0, 0, 0, 0.632);
+        background-image: url(/Project/RNP-BG.jpg);
+        height: 50px;
+        width: 50px;
+        border-color: #00000054;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;  
+      }
+
+      .btn-hamburger:hover{
+        color: black;
+        
+      }
+
+
+      /* .nav-hide{
+        display: none;
+      } */
+
+
+      .center-logo{
+        text-align: center;
+      }
+
+      .user-dp{
+        text-align: center;
+        margin-left: 90px;
+
+      }
+
+
+      .transparent-burger{
+        background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('/Project/RNP-BG.jpg');
+        background-size: cover;
+        background-position: center;
+        transition: background-image 0.6s ease-in-out;
+      }
+
+      .transparent-navbar {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('/Project/RNP-BG.jpg');
+        background-size: cover;
+        background-position: center;
+        transition: background-image 0.6s ease-in-out;
+    }
+    
+    
+
+      .header-main{
+        height: 100px;
+        margin-bottom: 60px;
+
+      
+      }
+
+
+      .navbar{
+        background-image: url(/Project/RNP-BG.jpg);
+        border-bottom: solid;
+        border-color: #00000022;
+        border-width: 3px;
+        box-shadow: 10px ;
+        height: 100px;
+        
+      }
+
+      .main-droid{
+        margin-bottom: 50px;
+      }
+ 
+      .navbar-brand{
+        margin-right: 50px;
+        
+      }
+      
+      .nav-link{
+        font-size: 1.2rem; 
+        font-weight: bold; 
+        color: #2a2323a1; 
+        /* text-align: left; */
+      }
+
+      .nav-link:hover{
+        background-color: #0a030133;
+        color: #00000091;
+      }
+
+      .nav-link2{
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: bold; 
+        color: #121010a1; 
+        text-decoration: none;
+        
+      }
+
+      .bottom{
+        padding-right: 0;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .bottom-nav{
+       margin-left: 20px;
+        text-align: center;
+        margin-bottom: 0;
+        justify-content: center;
+        flex-wrap: nowrap;
+        display: flex;
+        flex-shrink: 0;
+      }
+
+      .nav-link:active,
+      .nav-link:focus,
+      .nav-link:visited {
+        color: #2a2323a1; /* Ensure that the clicked or visited link remains the same color */
+      }
+
+      .sub-item-box{
+        background-color: #6352521b;
+        border-radius: 10px;
+        display: block;
+      }
+
+      .form-label{
+        font-weight: 1000;
+        color: #8d3600;
+      }
+
+      .dropdown-menu{
+        background-image: url(/Project/RNP-BG.jpg);
+        
+      }
+
+      .dropdown-item{
+        color: black;
+      }
+
+      hr{
+        margin: 10px;
+        font-weight: 500;
+        
+        border-width: 2px;
+      }
+  
+
+
+      /* Content Box (Cards) */
+      img.responsive {
+        max-width: 100%;
+        width: 60px; /* Example default size */
+        height: auto;
+    }
+    
+    .custom-div {
+        background-image: url(/Project/RNP-BG.jpg);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        text-align: center;
+        position: relative;
+        margin-bottom: 20px;
+    }
+    
+    .custom-div2 {
+        background-color: rgba(255, 255, 255, 0.279);
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 15px;
+    }
+    
+    .custom-div h2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .custom-div img.sideDroid {
+        margin-left: 10px;
+    }
+
+    .nav-text{
+        font-weight: bold;
+        font-size: 0.8rem;
+        font-weight: bold; 
+        
+    
+    }
+
+    .money-text{
+        font-size: 1.0rem; /* Slightly larger text */
+        font-weight: 800; /* Make it bold for emphasis */
+        color: #8d3600; /* White text color */
+    }
+    
+    .custom-div p {
+        margin-top: 15px;
+    }
+    
+    .custom-div a {
+        color: #c75934;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+    
+    .custom-div a:hover {
+        color: #963e22;
+    }
+
+    .bot-text {
+        font-size: 1.2rem; /* Slightly larger text */
+        font-weight: bold; /* Make it bold for emphasis */
+        color: #ffffff; /* White text color */
+        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+        padding: 5px 10px; /* Add some padding around the text */
+        border-radius: 5px; /* Rounded corners */
+        display: inline-block; /* Ensures the background wraps the text */
+        margin-top: 10px; /* Adds some spacing above */
+    }
+    
+    
+
+    /* END OF CSS CARDS */
+
+
+
+
+
+      .sideDroid{
+        margin-left: 20px;
+      }
+
+      .offcanvas{
+        background-image: url(/Project/RNP-BG.jpg);
+
+      }
+
+      .img-fluid {
+        width: 100%;
+        height: auto;
+        object-fit: contain; /* Ensures the whole image is visible */
+    }
+    
+
+
+
+
+
+
+
+
+/* Bottom Navigation CSS */
+
+
+
+
+
+/* Navbar Toggler Icon */
+
+.navbar-toggler {
+    border-color: transparent; /* Optional: to remove the border around the button */
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+    background-color: #c75934; /* Change this to your desired color */
+    width: 30px;
+    height: 3px;
+    display: block;
+    position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    background-color: #c75934; /* Change this to your desired color */
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+}
+
+.navbar-toggler-icon::before {
+    top: -8px;
+}
+
+.navbar-toggler-icon::after {
+    top: 8px;
+}
+
+/*  */
+
+
+
+.balance-text{
+    font-weight: bold;
+    color: #e9660f;
+
+    font-size: 1.0rem;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.title-text{
+  color: #8f2f11;   
+  
+    font-weight: 1000; /* Semi-bold for emphasis */
+    /* font-weight: bold; */
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.btn-form{
+  margin: 20px;
+
+}
+
+
+/* Table */
+
+
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  text-align: center;
+  justify-content: space-around;
+  margin-left: 130px;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){
+  background-color: transparent;
+}
+
+#customers tr:hover {background-color: #c66a1e;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+

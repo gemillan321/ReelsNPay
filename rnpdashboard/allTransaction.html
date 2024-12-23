@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+    <!-- 
+    Please note that the css and javascript for the
+    Table and Search bar is on this file
+    
+    CONTENTS:
+
+    Offcanvas
+    search bar
+    table
+    script
+    style
+
+    -->
+
+
+
+
+  <!-- Offcanvas Sidebar -->
+  <div class="container-fluid offcanvas offcanvas-start" tabindex="-1" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasSidebarLabel">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body container-fluid">
+      <nav class="flex-column flex-shrink-0 p-3">
+        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+          <span class="fs-4 img-fluid"><img src="./Project/RNP Logo.png" class="center-logo img-fluid" alt="logo" width="330" height="300"></span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+
+
+          <li class="nav-item">
+            <a href="/rnpdashboard/index.html" class="nav-link">Dashboard</a>
+          </li>
+
+            <li class="nav-item">
+              <a href="/rnpdashboard/addReelsPackage.html" class="nav-link">Add Reels Package</a>
+            </li>
+          
+            <li class="nav-item">
+              <a href="/rnpdashboard/cashoutListIncome.html" class="nav-link">Cashout List Income</a>
+            </li>
+          
+          
+            <li class="nav-item">
+              <a href="/rnpdashboard/cashoutReferrals.html" class="nav-link">Cashout Referrals</a>
+            </li>
+            <li class="nav-item">
+              <a href="/rnpdashboard/cashoutLeadershipBonus.html" class="nav-link">Cashout Leadership Bonus</a>
+            </li>
+            <li class="nav-item">
+              <a href="cashoutPassup.html" class="nav-link">Cashout Passup</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a href="allTransaction.html" class="nav-link">All Transaction History</a>
+              </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#reelsBonusDropdown" aria-expanded="false">
+                Reports
+              </a>
+              <ul class="nav sub-item-box flex-column collapse" id="reelsBonusDropdown">
+                <li class="nav-item"><a href="reelsPackageList.html" class="nav-link">Reels Package List</a></li>
+                <li class="nav-item"><a href="referralList.html" class="nav-link">Referral List</a></li>
+                <li class="nav-item"><a href="cashoutList.html" class="nav-link">Cashout List</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="/rnpdashboard/cashoutLeadershipBonus.html" class="nav-link">Video Tutorials</a>
+              </li>
+        <hr>
+
+
+        <div class="dropdown user-dp">
+            <a href="#" class="d-flex align-items-center text-decoration-none user-iconbox dropdown-toggle sidebar-toggle" data-bs-toggle="dropdown">
+              <img src="./Project/user-icon.jpg" alt="User Image" class="rounded-circle me-2" width="70px" style="object-fit: cover;">
+              <strong class="user-drop">User</strong>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+              <li><a class="dropdown-item" href="#">Change Password</a></li>
+              <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Log out</a></li>
+            </ul>
+          </div>
+      </nav>
+    </div>
+  </div>
+
+
+
+
+  <div class="d-flex">
+    <div class="flex-grow-1">
+      <!-- Navbar -->
+      <nav id="mainNavbar" class="navbar top navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid sticky-top">
+            <!-- Hamburger button -->
+            <div class="d-flex align-items-center">
+                <button id="transparent-burger" class="btn btn-primary me-2 btn-hamburger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+                    ☰
+                </button>
+            </div>
+    
+            <!-- Center the brand -->
+            <div class="mx-auto">
+                <a class="navbar-brand" href="#">
+                    <img src="./Project/RNP Logo.png" alt="Android" width="80">
+                </a>
+            </div>
+    
+            <!-- Dummy div to balance the flex layout -->
+            <div></div>
+        </div>
+    </nav>
+    
+
+
+
+      <!-- Content -->
+      <!-- Table -->
+      <div class="container mt-4">
+        <h1 class="mb-4">All Transaction List</h1>
+
+
+
+        <!-- Search bar -->
+        <div class="search-container mb-3">
+            <input type="text" id="tableSearch" class="form-control" placeholder="Search...">
+          </div>
+
+        <div class="table-responsive">
+            
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Ammount</th>
+                        <th>Account Number</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Transaction ID">12312314241</td>
+                        <td data-label="Ammount">200</td>
+                        <td data-label="Account Number">020202</td>
+                        <td data-label="Satus">Success</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Transaction ID">12312314241</td>
+                        <td data-label="Ammount">300</td>
+                        <td data-label="Account Number">030303</td>
+                        <td data-label="Satus">Failed</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Transaction ID">12312314241</td>
+                        <td data-label="Ammount">400</td>
+                        <td data-label="Account Number">040404</td>
+                        <td data-label="Satus">Pending</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+    </div>
+  </div>
+
+
+<!-- Bottom Navigation for Mobile -->
+<nav id="navbar-bot" class="navbar bottom  navbar-light bg-light fixed-bottom d-lg-none">
+    <div class="container-fluid bottom-nav">
+        <div class="row w-100">
+            <div class="col text-center">
+                <a class="nav-link2 d-flex flex-column align-items-center" href="/rnpdashboard/index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="auto" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                      </svg>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+            </div>
+            <div class="col text-center">
+                <a class="nav-link2 d-flex flex-column align-items-center" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="auto" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
+                        <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8m4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5"/>
+                        <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                      </svg>
+                    <span class="nav-text">Subscription</span>
+                </a>
+            </div>
+            <div class="col text-center">
+                <a class="nav-link2 d-flex flex-column align-items-center" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="max-width: 24px; height: auto;" fill="currentColor" class="bi bi-cash" viewBox="0 0 16 16">
+                        <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                        <path d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2z"/>
+                      </svg>
+                    <span class="nav-text">Income</span>
+                </a>
+            </div>
+            <div class="col text-center">
+                <a class="nav-link2 d-flex flex-column align-items-center" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="auto" fill="currentColor" class="bi bi-person-raised-hand" viewBox="0 0 16 16">
+                        <path d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a1 1 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207"/>
+                        <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                      </svg>
+                    <span class="nav-text">Referral</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<!-- SEARCHBAR FUNCTION -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the search input
+  const searchInput = document.getElementById('tableSearch');
+
+  // Add an event listener to filter table rows based on search input
+  searchInput.addEventListener('input', function() {
+    // Get the value of the search input and convert it to lowercase
+    const searchTerm = searchInput.value.toLowerCase();
+
+    // Get all table rows
+    const rows = document.querySelectorAll('.table tbody tr');
+
+    rows.forEach(row => {
+      // Get all the text content from the cells in the current row
+      const cells = row.querySelectorAll('td');
+      const rowText = Array.from(cells).map(cell => cell.textContent.toLowerCase()).join(' ');
+
+      // Check if the row text matches the search term
+      if (rowText.includes(searchTerm)) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+<!-- Styles for the table & SEARCHBAR-->
+
+<style>
+/* Search Bar */
+.search-container {
+  margin-bottom: 1rem;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.search-container .form-control {
+  width: 30%;
+}
+
+/* Table Styles */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  
+}
+
+.table thead th {
+  background-color: #e4780d6c;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.table th{
+    font-weight: 800;
+}
+
+.table tbody td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .table thead {
+    display: none;
+  }
+  .table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    
+  }
+  .table tbody td {
+    display: block;
+    text-align: right;
+    font-size: 0.875rem;
+    border-bottom: 1px solid #ddd;
+    padding: 0.75rem;
+    position: relative;
+    font-weight: 600;
+    
+  }
+  .table tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 45%;
+    padding-left: 0.75rem;
+    font-weight: bold;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: 800;
+  }
+  .table tbody td:last-child {
+    border-bottom: 0;
+  }
+}
+
+.mb-4{
+    font-weight: 1000;
+}
+</style>
+
+
+</html>
