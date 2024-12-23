@@ -1,5 +1,5 @@
 body{
-    background-image: url(/Project/RNP-BG.jpg);
+    background-image: url(./Project/RNP-BG.jpg);
     background-size: cover;
     
     text-align: center;
@@ -9,7 +9,7 @@ body{
 /* Ensure the sidebar occupies the full height */
     #sidebar {
         height: 100vh; /* 100% of the viewport height */
-        background-image: url(/Project/RNP-BG.jpg);
+        background-image: url(./Project/RNP-BG.jpg);
         border-right: solid;
         border-color: rgb(155, 82, 8);
       }
